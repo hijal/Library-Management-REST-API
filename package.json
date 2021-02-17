@@ -1,0 +1,31 @@
+{
+  "name": "Library-Management-REST-API",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "devStart": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Tahmid Masud",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^7.1.0",
+    "async": "^3.2.0",
+    "bcrypt": "^5.0.0",
+    "better-ajv-errors": "^0.7.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "node-excel-export": "^1.4.4"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7"
+  }
+}

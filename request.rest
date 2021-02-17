@@ -1,0 +1,192 @@
+GET http://localhost:3000/users
+
+###
+
+POST http://localhost:3000/user_signup
+Content-Type: application/json
+
+{
+  "email": "test2@test.com",
+  "name": "Test User 2",
+  "password": "123456",
+  "role": 2
+}
+
+###
+
+POST http://localhost:3000/admin_signup
+Content-Type: application/json
+
+{
+  "email": "admin@test.com",
+  "name": "Test Admin",
+  "password": "123456",
+  "role": 1
+}
+
+###
+
+POST http://localhost:3000/login
+Role: 1
+Content-Type: application/json
+
+{
+  "email": "admin@test.com",
+  "password": "123456"
+}
+
+###
+
+POST http://localhost:3000/login
+Role: 2
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "123456"
+}
+
+###
+
+POST http://localhost:3000/create_author
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoxLCJpYXQiOjE2MTM1ODU3MTYsImV4cCI6MTYxNDE5MDUxNn0.h0rnJZRFp6J4_polNqlRiaffDkkE26v4o_lFI7rTU20
+Content-Type: application/json
+
+{
+  "author_name": "Test Author 2"
+}
+
+###
+
+GET http://localhost:3000/view_author
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoxLCJpYXQiOjE2MTM1ODU3MTYsImV4cCI6MTYxNDE5MDUxNn0.h0rnJZRFp6J4_polNqlRiaffDkkE26v4o_lFI7rTU20
+
+###
+
+POST http://localhost:3000/update_author
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoxLCJpYXQiOjE2MTM1ODU3MTYsImV4cCI6MTYxNDE5MDUxNn0.h0rnJZRFp6J4_polNqlRiaffDkkE26v4o_lFI7rTU20
+Content-Type: application/json
+
+{
+  "author_name": "Test Author Name Change",
+  "author_id": 1
+}
+
+###
+POST http://localhost:3000/delete_author
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoxLCJpYXQiOjE2MTM1ODU3MTYsImV4cCI6MTYxNDE5MDUxNn0.h0rnJZRFp6J4_polNqlRiaffDkkE26v4o_lFI7rTU20
+Content-Type: application/json
+
+{
+  "author_id": 1
+}
+
+###
+
+POST http://localhost:3000/create_book
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoxLCJpYXQiOjE2MTM1ODYyNDYsImV4cCI6MTYxNDE5MTA0Nn0.GcCaYXggT04ULtf1s6IYLDu4a3MFxgjtXBXZHeCF0_0
+Content-Type: application/json
+
+{
+  "book_name": "Test Book 1",
+  "author_id": 1
+}
+
+###
+
+GET http://localhost:3000/view_book
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoxLCJpYXQiOjE2MTM1ODYyNDYsImV4cCI6MTYxNDE5MTA0Nn0.GcCaYXggT04ULtf1s6IYLDu4a3MFxgjtXBXZHeCF0_0
+Content-Type: application/json
+
+
+###
+
+POST http://localhost:3000/update_book
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoxLCJpYXQiOjE2MTM1ODYyNDYsImV4cCI6MTYxNDE5MTA0Nn0.GcCaYXggT04ULtf1s6IYLDu4a3MFxgjtXBXZHeCF0_0
+Content-Type: application/json
+
+{
+  "name": "Test Book 2",
+  "author_id": 2,
+  "book_id": 1
+}
+
+###
+
+POST http://localhost:3000/delete_book
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoxLCJpYXQiOjE2MTM1ODU3MTYsImV4cCI6MTYxNDE5MDUxNn0.h0rnJZRFp6J4_polNqlRiaffDkkE26v4o_lFI7rTU20
+Content-Type: application/json
+
+{
+  "book_id": 1
+}
+
+###
+
+POST http://localhost:3000/request_book_loan
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJyb2xlIjoyLCJpYXQiOjE2MTM1NTg0NTYsImV4cCI6MTYxNDE2MzI1Nn0.Pb8z-dZT9FDPrMCFKxXKArOjbtC-lcosNPo6FM39-BQ
+Content-Type: application/json
+
+{
+  "start_date": "2021-02-18T10:38:05.792Z",
+  "end_date": "2021-02-20T10:38:05.792Z",
+  "book_id": 1
+}
+
+###
+
+POST http://localhost:3000/update_book_loan_status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoxLCJpYXQiOjE2MTM1ODYyNDYsImV4cCI6MTYxNDE5MTA0Nn0.GcCaYXggT04ULtf1s6IYLDu4a3MFxgjtXBXZHeCF0_0
+Content-Type: application/json
+
+{
+  "request_id": 4,
+  "status": 2
+}
+
+###
+
+GET http://localhost:3000/show_all_book_loan
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoxLCJpYXQiOjE2MTM1NTkzNjMsImV4cCI6MTYxNDE2NDE2M30.CR_xtsBjf_k-4Ng5TcRuFyleFbgkX2T7_VXkXjtXCm4
+
+###
+
+GET http://localhost:3000/user_book_loan_status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJyb2xlIjoyLCJpYXQiOjE2MTM1NTg0NTYsImV4cCI6MTYxNDE2MzI1Nn0.Pb8z-dZT9FDPrMCFKxXKArOjbtC-lcosNPo6FM39-BQ
+
+###
+
+GET http://localhost:3000/book_request_export
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoxLCJpYXQiOjE2MTM1NTkzNjMsImV4cCI6MTYxNDE2NDE2M30.CR_xtsBjf_k-4Ng5TcRuFyleFbgkX2T7_VXkXjtXCm4
+
+###
+
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmltIiwiaWF0IjoxNTY4NzU5ODEyLCJleHAiOjE1Njg3NTk4Mjd9.0i6Im2gKz7jj8wM7aZZzOPaBS_xHoZWAqBwnldn-lQQ
+
+###
+
+DELETE http://localhost:4000/logout
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmltIiwiaWF0IjoxNTY4NzU5OTIyfQ.RT6wszuCeFLwC_6ksmNMIELxiC5s-uRivfRxyZof5ag"
+}
+
+###
+
+POST http://localhost:3000/refresh_token
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoyLCJpYXQiOjE2MTM1MDI0OTZ9.R8jTcs2SaPoac4z9trG1LxofOmJ3tnL8TMvZzVlCqT8"
+}
+
+###
+
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+  "username": "Jim"
+}
