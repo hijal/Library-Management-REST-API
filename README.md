@@ -1,7 +1,7 @@
 
 # Library-Management-REST-API
 
-This evaluation project is madeto provide basic CRUD REST APIs for Library Management.
+This project is made to provide basic CRUD REST APIs for Library Management.
   
 
 ## To run the project follow the steps below:
